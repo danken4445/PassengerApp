@@ -43,14 +43,29 @@
             app:navigationIcon="@drawable/baseline_menu_24" />
 
         <TextView
+            android:id="@+id/Welcome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="25dp"
+            android:text="Welcome!"
+            android:textColor="#001a3f"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/baloo_bhai"
+            app:layout_constraintEnd_toStartOf="@+id/userProfile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <TextView
             android:id="@+id/textViewUserName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="50dp"
             android:text=""
             android:textColor="#001a3f"
-            android:textSize="24sp"
+            android:textSize="36sp"
             android:textStyle="bold"
             app:fontFamily="@font/baloo_bhai"
             app:layout_constraintEnd_toStartOf="@+id/userProfile"
@@ -61,12 +76,11 @@
             android:id="@+id/textViewID"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
             android:text=""
             android:textColor="#001a3f"
             android:textSize="16sp"
             android:textStyle="bold"
+            android:layout_marginLeft="30dp"
             app:layout_constraintEnd_toStartOf="@+id/userProfile"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewUserName" />
@@ -227,7 +241,6 @@
 
                     />
 
-                    <!-- Add any additional views or controls as needed -->
 
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>

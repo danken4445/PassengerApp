@@ -4,7 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
     tools:context=".ViewQrCodeActivity">
+
+    <TextView
+        android:id="@+id/qrcodetext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="170dp"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="44sp" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -12,8 +23,8 @@
         android:layout_centerInParent="true"
         android:layout_gravity="center"
         android:layout_margin="16dp"
-        android:elevation="4dp"
-        app:cardCornerRadius="8dp">
+        android:elevation="32dp"
+        app:cardCornerRadius="64dp">
 
         <ImageView
             android:id="@+id/qrCodeImageView"

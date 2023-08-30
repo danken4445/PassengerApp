@@ -16,10 +16,11 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.example.passengeractivity.LoginActivity;
 
 public class SplashScreen extends Activity {
-    private static int SPLASH_TIME_OUT = 3000; // Adjust the duration as needed
+    private static int SPLASH_TIME_OUT = 3300; // Adjust the duration as needed
     private ImageView busImageView;
     private ImageView logo;
     private TextView welcome;
@@ -54,29 +55,9 @@ public class SplashScreen extends Activity {
         busImageView = findViewById(R.id.bus_logo);
         welcome = findViewById(R.id.companyName);
         acro = findViewById(R.id.sloganText);
+        LottieAnimationView lottieAnimationView = findViewById(R.id.bus_logo);
+        lottieAnimationView.setSpeed(2.2f);
 
-        Animation moveLeftAnimation = AnimationUtils.loadAnimation(this, R.anim.bus_move_left);
-        Animation moveRightAnimation = AnimationUtils.loadAnimation(this, R.anim.bus_move_right);
-
-        busImageView.setAnimation(moveLeftAnimation);
-
-        moveLeftAnimation.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {
-                // Animation started
-            }
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-
-            }
-
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-                // Animation repeated (if needed)
-            }
-        });
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -85,6 +66,7 @@ public class SplashScreen extends Activity {
                 Pair<View, String>[] pairs = new Pair[]{
                         Pair.create((View) busImageView, "logo_image"),
                         Pair.create((View) welcome, "logo_text"),
+
                 };
 
                 ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SplashScreen.this, pairs);

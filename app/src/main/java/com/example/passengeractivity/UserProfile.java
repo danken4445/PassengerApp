@@ -108,7 +108,7 @@ public class UserProfile extends AppCompatActivity implements NavigationView.OnN
         userLastname = getIntent().getStringExtra("userLastname");
 
         rideCoinBalanceTextView.setText("₱" + userBalance + ".00");
-        textViewUserName.setText(userFirstname + " " + userLastname);
+        textViewUserName.setText(userFirstname);
         textViewID.setText(Pid);
 
 
