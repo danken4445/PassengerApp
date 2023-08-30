@@ -1,0 +1,18 @@
+<!-- res/drawable/custom_loading_bar_animation.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Loading bar background -->
+    <item android:id="@+id/background">
+        <shape android:shape="rectangle">
+            <solid android:color="#CCCCCC" />
+            <corners android:radius="5dp" />
+        </shape>
+    </item>
+
+    <!-- Loading bar progress with bus logo animation -->
+    <item android:id="@+id/progress">
+        <scale
+            android:drawable="@drawable/buslogo1"
+            android:gravity="center"
+            android:scaleWidth="100%" />
+    </item>
+</layer-list>
