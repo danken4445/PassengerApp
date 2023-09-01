@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
+        <item>@font/alata</item>
         <item>@font/alfa_slab_one</item>
         <item>@font/audiowide</item>
         <item>@font/average_sans</item>
         <item>@font/baloo_bhai</item>
         <item>@font/bowlby_one_sc</item>
         <item>@font/carter_one</item>
+        <item>@font/faster_one</item>
+        <item>@font/nova_square</item>
     </array>
 </resources>

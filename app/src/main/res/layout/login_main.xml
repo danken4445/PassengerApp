@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background"
+    android:background="@drawable/gradientbg"
     android:orientation="vertical"
     android:padding="24dp"
     tools:context=".LoginActivity"
@@ -12,14 +12,30 @@
     >
 
 
-    <ImageView
-        android:id="@+id/login"
-        android:layout_marginRight="10dp"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:src="@drawable/buslogo1"
-        android:textAlignment="center"
-        android:transitionName="logo_image" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+        <!-- Lottie animation view -->
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieAnimationView"
+            android:layout_width="match_parent"
+            android:layout_height="225dp"
+            android:scaleX="1.3"
+            app:lottie_rawRes="@raw/blob2" />
+
+        <!-- ImageView for "login" -->
+        <ImageView
+            android:id="@+id/login"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/logotransparent"
+            android:textAlignment="center"
+            android:transitionName="logo_image" />
+    </FrameLayout>
+
+
 
     <TextView
         android:id="@+id/Welcome"
@@ -28,7 +44,7 @@
         android:fontFamily="@font/bowlby_one_sc"
         android:text="Welcome to RIDEPAY"
         android:textAlignment="center"
-        android:textColor="#001a3f"
+        android:textColor="@color/colorSecondary"
         android:textSize="24sp"
         android:transitionName="logo_text" />
 
@@ -50,14 +66,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        app:boxBackgroundColor="#80d8a13c">
+        app:boxStrokeColor="@color/colorSecondary"
+        android:backgroundTint="@color/colorSecondary"
+        android:textColorHint="@color/colorSecondary"
+        app:boxBackgroundColor="@android:color/transparent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/usernameEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorSecondary"
             android:hint="Username"
-            android:textColorHint="#d8a13c"
             android:textSize="16sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -69,17 +88,20 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColorHint="@color/colorSecondary"
         android:textSize="16sp"
-        app:boxBackgroundColor="#80d8a13c"
+        app:boxStrokeColor="@color/colorSecondary"
+        app:boxBackgroundColor="@android:color/transparent"
+        android:backgroundTint="@color/colorSecondary"
         app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/passwordEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorSecondary"
             android:hint="Password"
             android:inputType="textPassword"
-            app:hintTextColor="@color/black"
             app:passwordToggleEnabled="true" />
 
 

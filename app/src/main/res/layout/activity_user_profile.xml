@@ -8,6 +8,7 @@
     android:fitsSystemWindows="true"
     android:orientation="vertical"
     tools:context=".UserProfile"
+    android:background="@drawable/userbgnew2"
     tools:openDrawer="end">
 
     <com.google.android.material.navigation.NavigationView
@@ -15,25 +16,25 @@
         android:layout_width="280dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="@drawable/userbg1"
+        android:background="#141e46"
         app:headerLayout="@layout/nav_header"
-        app:itemShapeFillColor="#70001a3f"
-        app:itemTextColor="#d7a03b"
+        app:itemIconTint="@color/colorSecondary"
+        app:itemTextColor="@color/colorSecondary"
         app:menu="@menu/nav_menu"
-        app:subheaderColor="#001a3f" />
+        app:subheaderColor="@color/colorSecondary"></com.google.android.material.navigation.NavigationView>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/gradient_background">
+        >
 
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="36dp"
             android:background="#00008577"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
@@ -46,14 +47,15 @@
             android:id="@+id/Welcome"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="22dp"
             android:text="Welcome!"
             android:textColor="#001a3f"
-            android:textSize="24sp"
+            android:textSize="36dp"
             android:textStyle="bold"
             app:fontFamily="@font/baloo_bhai"
             app:layout_constraintEnd_toStartOf="@+id/userProfile"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
@@ -62,45 +64,35 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="-22dp"
             android:text=""
-            android:textColor="#001a3f"
+            android:textColor="@color/colorSecondary"
             android:textSize="36sp"
             android:textStyle="bold"
             app:fontFamily="@font/baloo_bhai"
             app:layout_constraintEnd_toStartOf="@+id/userProfile"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+            app:layout_constraintTop_toBottomOf="@+id/Welcome" />
 
-        <TextView
-            android:id="@+id/textViewID"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textColor="#001a3f"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_marginLeft="30dp"
-            app:layout_constraintEnd_toStartOf="@+id/userProfile"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewUserName" />
+
 
         <ImageView
             android:id="@+id/userProfile"
             android:layout_width="0dp"
             android:layout_height="160dp"
+            android:layout_marginTop="28dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textViewUserName"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/userprofile1" />
 
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="0dp"
             android:layout_height="175dp"
-            android:orientation="horizontal"
+            android:layout_marginTop="22dp"
+            android:orientation="vertical"
             android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -109,36 +101,43 @@
 
 
             <androidx.cardview.widget.CardView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="325dp"
+                android:layout_height="160dp"
+                android:layout_gravity="center"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:elevation="8dp"
-                app:cardCornerRadius="30dp">
+                app:cardCornerRadius="30dp"
+                app:cardBackgroundColor="@color/colorPrimary"
+                >
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/navheaderbg">
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/card"
+                    android:scaleX="1.2"
+
+
+                    >
 
                     <ImageView
                         android:id="@+id/rideCoinLogo"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="10dp"
-                        app:srcCompat="@drawable/rc1" />
+                        android:layout_marginLeft="44dp"
+                        android:layout_marginTop="2dp"
+                        app:srcCompat="@drawable/buslogo" />
 
                     <TextView
                         android:id="@+id/ridecoins"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="11dp"
-                        android:layout_marginTop="16dp"
+                        android:layout_marginLeft="46dp"
+                        android:layout_marginTop="20dp"
                         android:layout_toRightOf="@id/rideCoinLogo"
                         android:text="RideCoin Balance"
                         android:textColor="#001a3f"
-                        android:textSize="24sp"
+                        android:textSize="18sp"
                         app:fontFamily="@font/baloo_bhai" />
 
                     <TextView
@@ -146,12 +145,29 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/rideCoinLogo"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="16dp"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginTop="-2dp"
                         android:text=""
                         android:textColor="#d8a13c"
-                        android:textSize="44sp"
-                        app:fontFamily="serif" />
+                        android:textSize="28sp"
+                        app:fontFamily="@font/alata" />
+
+                    <TextView
+                        android:id="@+id/textViewID2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginEnd="64dp"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/nova_square"
+                        android:text=""
+                        android:textColor="@color/colorSecondary"
+                        android:textSize="16sp"
+                        android:textStyle="bold">
+
+
+                    </TextView>
 
                 </RelativeLayout>
 
@@ -176,7 +192,7 @@
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:clickable="true"
-                android:elevation="8dp"
+                android:elevation="32dp"
                 android:onClick="onCardViewClick"
                 android:transitionName="mapTransition"
                 app:cardCornerRadius="20dp">
@@ -184,7 +200,23 @@
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/locationicon">
+                    android:background="@color/colorSecondary"
+                    android:layout_gravity="center"
+                    >
+
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/locationlottie"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:lottie_rawRes="@raw/location2"
+                        android:scaleY="1.8"
+                        android:scaleX="1.6"
+                        android:scaleType="fitCenter"
+                        android:layout_marginRight="16dp"
+                        >
+
+                    </com.airbnb.lottie.LottieAnimationView>
 
                     <TextView
                         android:id="@+id/topUpLocation"
@@ -193,7 +225,7 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="110dp"
                         android:text="Top Up Locations"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/white"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         app:fontFamily="@font/baloo_bhai" />
@@ -210,6 +242,7 @@
                 android:layout_height="175dp"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
+                android:elevation="32dp"
                 app:cardCornerRadius="30dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -219,15 +252,26 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/gradient_background">
+                    android:background="@color/colorSecondary">
 
 
                     <ImageView
-                        android:id="@+id/qrCodeImageView"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerInside"
-                        android:src="@drawable/qrlogo1" />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/qrlogo1"
+                        android:scaleType="center"
+                        android:scaleX=".8"
+                        android:scaleY=".8"
+
+                        ></ImageView>
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/qranim"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:lottie_rawRes="@raw/qr4"
+                        >
+                    </com.airbnb.lottie.LottieAnimationView>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -239,7 +283,7 @@
                         android:textSize="22sp"
                         app:fontFamily="@font/baloo_bhai" />
 
-                    />
+
 
 
                 </RelativeLayout>

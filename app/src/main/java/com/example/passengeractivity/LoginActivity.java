@@ -26,6 +26,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -67,6 +68,18 @@ public class LoginActivity extends AppCompatActivity {
         String text = "Rapid Integrated Digital E-PAYment";
 
         SpannableString spannableString = new SpannableString(text);
+
+        // Initialize the LottieAnimationView
+        LottieAnimationView lottieAnimationView = findViewById(R.id.lottieAnimationView);
+
+        // Load the Lottie animation from a file (you can also use other methods to load from URL, etc.)
+        lottieAnimationView.setAnimation(R.raw.blob2); // Replace "your_lottie_animation" with your animation file
+
+        // Optional: Set animation speed (1f is the default)
+        lottieAnimationView.setSpeed(1f); // Adjust the speed as needed
+
+        // Start playing the animation
+        lottieAnimationView.playAnimation();
 
         // Define the color you want (#d8a13c)
         int customColor = Color.parseColor("#d8a13c");

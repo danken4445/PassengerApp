@@ -18,6 +18,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.Manifest;
 
+import com.airbnb.lottie.LottieDrawable;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -86,6 +87,8 @@ public class UserProfile extends AppCompatActivity implements NavigationView.OnN
     private int userBalance;
     private String URL_dbgetInfo = "http://group5db-001-site1.etempurl.com/ridepay/userprofile.php";
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -94,10 +97,9 @@ public class UserProfile extends AppCompatActivity implements NavigationView.OnN
 
         CardView viewQrCodeCardView = findViewById(R.id.viewQrCodeCardView);
 
-
         TextView rideCoinBalanceTextView = findViewById(R.id.rideCoinBalance);
         TextView textViewUserName = findViewById(R.id.textViewUserName);
-        TextView textViewID = findViewById(R.id.textViewID);
+        TextView textViewID = findViewById(R.id.textViewID2);
 
         // User Information
         Pid = getIntent().getStringExtra("Pid");
@@ -106,6 +108,9 @@ public class UserProfile extends AppCompatActivity implements NavigationView.OnN
         userBalance = Integer.parseInt(getIntent().getStringExtra("userBalance"));
         userFirstname = getIntent().getStringExtra("userFirstname");
         userLastname = getIntent().getStringExtra("userLastname");
+
+
+
 
         rideCoinBalanceTextView.setText("₱" + userBalance + ".00");
         textViewUserName.setText(userFirstname);
@@ -121,6 +126,18 @@ public class UserProfile extends AppCompatActivity implements NavigationView.OnN
         contentView3 = findViewById(R.id.constraintLayout);
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
+
+        LottieAnimationView animationView = findViewById(R.id.locationlottie);
+        animationView.setAnimation(R.raw.location2); // Set the animation resource
+        animationView.setSpeed(0.5f); // Slow down the animation by half (0.5x speed)
+        animationView.playAnimation(); // Start the animation
+
+        LottieAnimationView animationView2;
+        animationView2 = findViewById(R.id.qranim);
+        animationView2.setAnimation(R.raw.qr4);
+        animationView2.setRepeatCount(2);
+        animationView2.playAnimation(); // Start the animation
+
 
 
         naviagtionDrawer();
@@ -369,6 +386,10 @@ public class UserProfile extends AppCompatActivity implements NavigationView.OnN
             // Handle the "History" menu item click
             // You can add code here to navigate to the History activity or perform any other action
             showLogoutConfirmationDialog();
+        }else if (id == R.id.nav_aboutUs) {
+            // Handle the "History" menu item click
+            // You can add code here to navigate to the History activity or perform any other action
+            startAboutUsActivity();
         }
 
         // Close the drawer after handling the click
@@ -380,6 +401,11 @@ public class UserProfile extends AppCompatActivity implements NavigationView.OnN
         Intent intent = new Intent(this, HistoryActivity.class);
         startActivity(intent);
     }
+        private void startAboutUsActivity() {
+            Intent intent = new Intent(UserProfile.this, AboutUsActivity.class);
+            startActivity(intent);
+        }
+
 
     private void startEditNameActivity() {
         // Create an Intent to start the EditNameActivity

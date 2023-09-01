@@ -4,11 +4,14 @@
     >
 
     <group android:checkableBehavior="single">
+        <item android:title="Features">
+        <menu>
 
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/nav_home"
             android:title="Home" />
+
 
         <item
             android:id="@+id/nav_history"
@@ -20,8 +23,8 @@
             android:id="@+id/nav_settings"
             android:icon="@drawable/nav_settings"
             android:title="Settings" />
-
-
+        </menu>
+    </item>
     </group>
 
     <group android:checkableBehavior="single">
@@ -31,6 +34,12 @@
                     android:id="@+id/nav_changeName"
                     android:icon="@drawable/baseline_lock_24"
                     android:title="Change Password" />
+
+                <item
+                    android:id="@+id/nav_logout"
+                    android:icon="@drawable/logout"
+                    android:orderInCategory="100"
+                    android:title="Log Out" />
 
 
             </menu>
@@ -44,11 +53,23 @@
     <group
         android:id="@+id/group_bottom"
         android:checkableBehavior="none">
-        <item
-            android:id="@+id/nav_logout"
-            android:icon="@drawable/logout"
-            android:orderInCategory="100"
-            android:title="Log Out" />
+
     </group>
+    <group>
+        <item android:title="About Us">
+            <menu>
+                <item
+                    android:id="@+id/nav_aboutUs"
+                    android:icon="@drawable/aboutus"
+                    android:title="About Us" />
+            </menu>
+
+
+        </item>
+
+
+    </group>
+
+
 
 </menu>

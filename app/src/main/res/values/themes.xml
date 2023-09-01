@@ -13,6 +13,21 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">#00000000</item>
+
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="MyCustomShapeAppearance">
+        <item name="cornerSize">300dp</item>
+        <item name="height">2dp</item>
+    </style>
+
+    <style name="MyMenuItemStyle">
+        <!-- Add your desired margin here -->
+        <item name="android:layout_marginTop">100dp</item>
+    </style>
+
+
+
+
 </resources>

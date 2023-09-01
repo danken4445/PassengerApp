@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background"
+    android:background="@drawable/gradientbg"
     tools:context=".SplashScreen">
 
 
@@ -23,21 +23,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="-50dp"
-        android:fontFamily="@font/bowlby_one_sc"
+        android:fontFamily="@font/faster_one"
         android:text="RIDEPAY"
         android:textColor="#d7a03b"
         android:textSize="62dp"
         android:transitionName="compName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/bus_logo" />
+
 
     <TextView
         android:id="@+id/sloganText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:fontFamily="@font/carter_one"
+        android:fontFamily="@font/nova_square"
         android:text="Transforming Transportation for a Smarter, Safer, and Greener Future."
 
 
