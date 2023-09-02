@@ -6,5 +6,7 @@
 
     <color name="colorPrimary">#8c52ff</color>
     <color name="colorSecondary">#f2be22</color>
+    <color name="colorDarkPrimary">#141e46</color>
+
 
 </resources>

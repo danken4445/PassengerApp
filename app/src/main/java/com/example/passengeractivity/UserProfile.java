@@ -85,6 +85,7 @@ public class UserProfile extends AppCompatActivity implements NavigationView.OnN
     ConstraintLayout contentView3;
     String Pid, message, UserUsername, UserPassword, userFirstname, userLastname;
     private int userBalance;
+    private LottieAnimationView chatbotIcon;
     private String URL_dbgetInfo = "http://group5db-001-site1.etempurl.com/ridepay/userprofile.php";
 
 
@@ -96,10 +97,12 @@ public class UserProfile extends AppCompatActivity implements NavigationView.OnN
         setContentView(R.layout.activity_user_profile);
 
         CardView viewQrCodeCardView = findViewById(R.id.viewQrCodeCardView);
-
         TextView rideCoinBalanceTextView = findViewById(R.id.rideCoinBalance);
         TextView textViewUserName = findViewById(R.id.textViewUserName);
         TextView textViewID = findViewById(R.id.textViewID2);
+
+        chatbotIcon = findViewById(R.id.chatbotIcon);
+
 
         // User Information
         Pid = getIntent().getStringExtra("Pid");
@@ -137,7 +140,6 @@ public class UserProfile extends AppCompatActivity implements NavigationView.OnN
         animationView2.setAnimation(R.raw.qr4);
         animationView2.setRepeatCount(2);
         animationView2.playAnimation(); // Start the animation
-
 
 
         naviagtionDrawer();
@@ -188,19 +190,27 @@ public class UserProfile extends AppCompatActivity implements NavigationView.OnN
                 return;
             }
             lowBalanceNotificationManager.notify(lowBalanceNotificationId, lowBalanceBuilder.build());
+
         }
 
 
         viewQrCodeCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
                 // Open the ViewQrCodeActivity when the card view is clicked
                 Intent intent = new Intent(UserProfile.this, ViewQrCodeActivity.class);
                 // Pass any necessary data to ViewQrCodeActivity using intent extras
                 // For example, you can pass the user's ID (Pid) if needed:
                 intent.putExtra("Pid", Pid);
+                startActivity(intent);
+            }
+        });
+        chatbotIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UserProfile.this, RPChatBotActivity.class);
+                // Pass any necessary data to ViewQrCodeActivity using intent extras
+                // For example, you can pass the user's ID (Pid) if needed:
                 startActivity(intent);
             }
         });
@@ -368,6 +378,7 @@ public class UserProfile extends AppCompatActivity implements NavigationView.OnN
         }
     }
 
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
@@ -480,5 +491,12 @@ public class UserProfile extends AppCompatActivity implements NavigationView.OnN
         // ...
     }
 
+    private void startChatWithChatbot() {
+        Intent intent = new Intent(UserProfile.this, RPChatBotActivity.class);
+        startActivity(intent);
+    }
 }
+
+
+
 

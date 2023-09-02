@@ -5,10 +5,10 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/userbgnew2"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
     tools:context=".UserProfile"
-    android:background="@drawable/userbgnew2"
     tools:openDrawer="end">
 
     <com.google.android.material.navigation.NavigationView
@@ -27,8 +27,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
 
 
         <androidx.appcompat.widget.Toolbar
@@ -75,7 +74,6 @@
             app:layout_constraintTop_toBottomOf="@+id/Welcome" />
 
 
-
         <ImageView
             android:id="@+id/userProfile"
             android:layout_width="0dp"
@@ -107,9 +105,8 @@
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:elevation="8dp"
-                app:cardCornerRadius="30dp"
                 app:cardBackgroundColor="@color/colorPrimary"
-                >
+                app:cardCornerRadius="30dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -200,21 +197,19 @@
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/colorSecondary"
                     android:layout_gravity="center"
-                    >
+                    android:background="@color/colorSecondary">
 
 
                     <com.airbnb.lottie.LottieAnimationView
                         android:id="@+id/locationlottie"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:lottie_rawRes="@raw/location2"
-                        android:scaleY="1.8"
-                        android:scaleX="1.6"
-                        android:scaleType="fitCenter"
                         android:layout_marginRight="16dp"
-                        >
+                        android:scaleType="fitCenter"
+                        android:scaleX="1.6"
+                        android:scaleY="1.8"
+                        app:lottie_rawRes="@raw/location2">
 
                     </com.airbnb.lottie.LottieAnimationView>
 
@@ -269,9 +264,7 @@
                         android:id="@+id/qranim"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:lottie_rawRes="@raw/qr4"
-                        >
-                    </com.airbnb.lottie.LottieAnimationView>
+                        app:lottie_rawRes="@raw/qr4"></com.airbnb.lottie.LottieAnimationView>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -284,13 +277,23 @@
                         app:fontFamily="@font/baloo_bhai" />
 
 
-
-
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
 
         </LinearLayout>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/chatbotIcon"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/chatbo2" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
