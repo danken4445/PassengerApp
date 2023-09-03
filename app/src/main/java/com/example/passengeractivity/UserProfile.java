@@ -53,6 +53,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -130,15 +132,17 @@ public class UserProfile extends AppCompatActivity implements NavigationView.OnN
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
 
+
         LottieAnimationView animationView = findViewById(R.id.locationlottie);
-        animationView.setAnimation(R.raw.location2); // Set the animation resource
+        animationView.setAnimation(R.raw.location3); // Set the animation resource
         animationView.setSpeed(0.5f); // Slow down the animation by half (0.5x speed)
         animationView.playAnimation(); // Start the animation
 
         LottieAnimationView animationView2;
         animationView2 = findViewById(R.id.qranim);
-        animationView2.setAnimation(R.raw.qr4);
-        animationView2.setRepeatCount(2);
+        animationView2.setAnimation(R.raw.qr6);
+        animationView2.setRepeatCount(1);
+        animationView2.setSpeed(0.5f); // Slow down the animation by half (0.5x speed)
         animationView2.playAnimation(); // Start the animation
 
 
