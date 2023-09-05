@@ -1,62 +1,450 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AboutUsActivity"
-    android:id="@+id/aboutUsPage">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/gradientbg"
+    android:padding="8dp">
 
-    <!-- Other profile content goes here -->
-
-    <!-- About Us Section -->
-    <LinearLayout
-        android:id="@+id/aboutUsLayout"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="8dp">
 
-        android:orientation="vertical"
-        android:padding="16dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="About Us"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <TextView
+        <GridLayout
+            android:id="@+id/gridLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Welcome to RidePay! We are dedicated to providing you with the best ride-sharing experience. If you have any questions or feedback, please feel free to reach out to our support team."
-            android:layout_marginTop="8dp"
-            android:textSize="16sp" />
+            android:layout_gravity="center"
+            android:layout_marginTop="282dp"
+            android:columnCount="2"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:rowCount="4">
 
 
+            <!-- Add CardViews for each team member -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:clickable="true"
+                android:elevation="16dp"
+                android:focusable="true"
+                app:cardCornerRadius="8dp">
 
-    </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#f0f8f8"
+                    android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"></LinearLayout>
+                    <!-- ImageView for the member's picture -->
+                    <ImageView
+                        android:id="@+id/memberPicture1"
+                        android:layout_width="match_parent"
+                        android:layout_height="156dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/userprofile" />
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+                    <!-- TextView for member's name -->
+                    <TextView
+                        android:id="@+id/Harley"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="8dp"
+                        android:text="John Harley\nAparece"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                    <!-- TextView for member's role -->
+                    <TextView
+                        android:id="@+id/memberRole1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="4dp"
+                        android:text="Full Stack\nDeveloper"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <!-- TextView for member's brief information -->
+                    <TextView
+                        android:id="@+id/memberInfo1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Brief info about Member 1"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:clickable="true"
+                android:elevation="8dp"
+                android:focusable="true"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#f0f8f8"
+                    android:orientation="vertical">
+
+                    <!-- ImageView for the member's picture -->
+                    <ImageView
+                        android:id="@+id/memberPicture2"
+                        android:layout_width="match_parent"
+                        android:layout_height="156dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/userprofile1" />
+
+                    <!-- TextView for member's name -->
+                    <TextView
+                        android:id="@+id/Dan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="8dp"
+                        android:text="Dan Ken Shen\nPenera"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                    <!-- TextView for member's role -->
+                    <TextView
+                        android:id="@+id/memberRole2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="4dp"
+                        android:text="Mobile Developer/\nProject Manager"
+                        android:textAlignment="center"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <!-- TextView for member's brief information -->
+                    <TextView
+                        android:id="@+id/memberInfo2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Brief info about Member 1"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:clickable="true"
+                android:elevation="16dp"
+                android:focusable="true"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#f0f8f8"
+                    android:orientation="vertical">
+
+                    <!-- ImageView for the member's picture -->
+                    <ImageView
+                        android:id="@+id/memberPicture3"
+                        android:layout_width="match_parent"
+                        android:layout_height="156dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/userprofile1" />
+
+                    <!-- TextView for member's name -->
+                    <TextView
+                        android:id="@+id/Rex"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="8dp"
+                        android:text="Rexer John\nAnoos"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                    <!-- TextView for member's role -->
+                    <TextView
+                        android:id="@+id/memberRole3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="4dp"
+                        android:text="Back End\n Dev"
+                        android:textAlignment="center"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <!-- TextView for member's brief information -->
+                    <TextView
+                        android:id="@+id/memberInfo3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Brief info about Member 1"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
 
-        </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:clickable="true"
+                android:elevation="8dp"
+                android:focusable="true"
+                app:cardCornerRadius="8dp">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="wew"
-        android:textAlignment="center"
-        android:textFontWeight="1"
-        >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#f0f8f8"
+                    android:orientation="vertical">
+
+                    <!-- ImageView for the member's picture -->
+                    <ImageView
+                        android:id="@+id/memberPicture4"
+                        android:layout_width="match_parent"
+                        android:layout_height="156dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/userprofile1" />
+
+                    <!-- TextView for member's name -->
+                    <TextView
+                        android:id="@+id/Argie"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="8dp"
+                        android:text="James Argie\nGatdula"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                    <!-- TextView for member's role -->
+                    <TextView
+                        android:id="@+id/memberRole4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="4dp"
+                        android:text="Graphic\nDesigner"
+                        android:textAlignment="center"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <!-- TextView for member's brief information -->
+                    <TextView
+                        android:id="@+id/memberInfo4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Brief info about Member 1"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
 
-    </TextView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:clickable="true"
+                android:elevation="8dp"
+                android:focusable="true"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#f0f8f8"
+                    android:orientation="vertical"
+
+                    >
+
+                    <!-- ImageView for the member's picture -->
+                    <ImageView
+                        android:id="@+id/memberPicture5"
+                        android:layout_width="match_parent"
+                        android:layout_height="156dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/userprofile1" />
+
+                    <!-- TextView for member's name -->
+                    <TextView
+                        android:id="@+id/Aldrin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="8dp"
+                        android:text="Aldrin\nAmantillo"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                    <!-- TextView for member's role -->
+                    <TextView
+                        android:id="@+id/memberRole5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="4dp"
+                        android:text="Project Researcher\n Technical Writer"
+                        android:textAlignment="center"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <!-- TextView for member's brief information -->
+                    <TextView
+                        android:id="@+id/memberInfo5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Brief info about Member 1"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
 
-</RelativeLayout>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:clickable="true"
+                android:elevation="8dp"
+                android:focusable="true"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#f0f8f8"
+                    android:orientation="vertical">
+
+                    <!-- ImageView for the member's picture -->
+                    <ImageView
+                        android:id="@+id/memberPicture6"
+                        android:layout_width="match_parent"
+                        android:layout_height="156dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/userprofile1" />
+
+                    <!-- TextView for member's name -->
+                    <TextView
+                        android:id="@+id/Bland"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="8dp"
+                        android:text="Blondin Bhryle\nSon"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                    <!-- TextView for member's role -->
+                    <TextView
+                        android:id="@+id/memberRole6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="4dp"
+                        android:text="Project Researcher\n Technical Writer"
+                        android:textAlignment="center"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <!-- TextView for member's brief information -->
+                    <TextView
+                        android:id="@+id/memberInfo6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Brief info about Member 1"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:clickable="true"
+                android:elevation="8dp"
+                android:focusable="true"
+                app:cardCornerRadius="8dp"
+
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#f0f8f8"
+                    android:orientation="vertical">
+
+                    <!-- ImageView for the member's picture -->
+                    <ImageView
+                        android:id="@+id/memberPicture7"
+                        android:layout_width="match_parent"
+                        android:layout_height="156dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/userprofile1" />
+
+                    <!-- TextView for member's name -->
+                    <TextView
+                        android:id="@+id/Blez"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="8dp"
+                        android:text="Blezyl Mae\nYbañez"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                    <!-- TextView for member's role -->
+                    <TextView
+                        android:id="@+id/memberRole7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="4dp"
+                        android:text="Project Researcher\n Technical Writer"
+                        android:textAlignment="center"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <!-- TextView for member's brief information -->
+                    <TextView
+                        android:id="@+id/memberInfo7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Brief info about Member 1"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </GridLayout>
+    </ScrollView>
+</FrameLayout>

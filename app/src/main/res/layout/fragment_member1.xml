@@ -1,0 +1,111 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_columnWeight="1"
+    android:layout_margin="8dp"
+    android:clickable="true"
+    android:elevation="8dp"
+    android:focusable="true"
+    app:cardCornerRadius="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f0f8f8"
+        android:orientation="vertical"
+        android:padding="32dp">
+
+        <!-- ImageView for the member's picture -->
+        <ImageView
+            android:id="@+id/memberPicture"
+            android:layout_width="wrap_content"
+            android:layout_height="275dp"
+            android:background="@drawable/userprofile1"
+            android:scaleType="centerCrop" />
+
+        <!-- TextView for member's name -->
+        <TextView
+            android:id="@+id/memberName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:text="John Harley Aparece"
+            android:textAlignment="center"
+            android:textSize="48sp" />
+
+        <!-- TextView for member's role -->
+        <TextView
+            android:id="@+id/memberRole"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:text="Full Stack Developer"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+        <!-- TextView for member's brief information -->
+        <TextView
+            android:id="@+id/memberInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Brief info about Member "
+            android:textSize="24sp" />
+
+        <!-- Social Media Links -->
+
+        <TextView
+            android:id="@+id/memberEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Email:\nPhone Number:"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_marginTop="8dp"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+
+            <!-- Facebook -->
+            <ImageView
+                android:id="@+id/facebookIcon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="openFacebookProfile"
+                android:src="@drawable/fbicon" />
+
+            <!-- Instagram -->
+            <ImageView
+                android:id="@+id/instagramIcon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="openInstagramProfile"
+                android:src="@drawable/instagramicon" />
+
+            <!-- LinkedIn -->
+            <ImageView
+                android:id="@+id/linkedInIcon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="openLinkedInProfile"
+                android:src="@drawable/linkediniconpng" />
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
