@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,7 +17,7 @@ import androidx.fragment.app.Fragment;
 
 public class Member2Fragment extends Fragment {
 
-    private CardView cardView;
+    private ScrollView scrollView;
     private ImageView memberPicture;
     private TextView memberName;
     private TextView memberRole;
@@ -35,7 +36,7 @@ public class Member2Fragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_member2, container, false);
 
 
-        cardView = view.findViewById(R.id.cardView);
+        scrollView = view.findViewById(R.id.cardView);
         memberPicture = view.findViewById(R.id.memberPicture);
         memberName = view.findViewById(R.id.memberName);
         memberRole = view.findViewById(R.id.memberRole);
@@ -45,9 +46,9 @@ public class Member2Fragment extends Fragment {
         linkedInIcon = view.findViewById(R.id.linkedInIcon);
 
         // Set click listeners for social media icons
-        setFacebookLink("https://www.facebook.com/your_facebook_profile", requireContext());
-        setInstagramLink("https://www.instagram.com/your_instagram_profile", requireContext());
-        setLinkedInLink("https://www.linkedin.com/in/your_linkedin_profile", requireContext());
+        setFacebookLink("https://www.facebook.com/dankenshen.penera", requireContext());
+        setInstagramLink("https://www.instagram.com/dnknshn/", requireContext());
+        setLinkedInLink("https://www.linkedin.com/in/dan-ken-shen-uriarte-penera-864199290/", requireContext());
 
         // You can set the member's details like name, role, and picture here
 

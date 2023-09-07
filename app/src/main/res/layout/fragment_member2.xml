@@ -1,4 +1,4 @@
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cardView"
     android:layout_width="match_parent"
@@ -21,7 +21,7 @@
         <ImageView
             android:id="@+id/memberPicture"
             android:layout_width="wrap_content"
-            android:layout_height="275dp"
+            android:layout_height="300dp"
             android:background="@drawable/userprofile1"
             android:scaleType="centerCrop" />
 
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="8dp"
-            android:text="Dan"
+            android:text="Dan Ken Shen Penera"
             android:textAlignment="center"
             android:textSize="48sp" />
 
@@ -43,7 +43,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="4dp"
-            android:text="Mobile Developer"
+            android:text="Mobile Developer\nProject Manager"
+            android:textAlignment="center"
             android:textSize="32sp"
             android:textStyle="bold" />
 
@@ -53,7 +54,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Brief info about Member "
+            android:text="I am Dan Ken Shen Penera, I'm currently 19 years old and a 2nd Year BSIT Student from Southwestern University, I'm from a small town called Surigao City."
             android:textSize="24sp" />
 
         <!-- Social Media Links -->
@@ -63,12 +64,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Email:\nPhone Number:"
+            android:text="Email: daur.penera.swu@phinmaed.com"
             android:textSize="14sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="75dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:gravity="end"
             android:orientation="horizontal">
@@ -108,4 +109,4 @@
 
         </LinearLayout>
     </LinearLayout>
-</androidx.cardview.widget.CardView>
+</ScrollView>

@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,7 +17,7 @@ import androidx.fragment.app.Fragment;
 
 public class Member1Fragment extends Fragment {
 
-    private CardView cardView;
+    private ScrollView scrollView;
     private ImageView memberPicture;
     private TextView memberName;
     private TextView memberRole;
@@ -35,7 +36,7 @@ public class Member1Fragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_member1, container, false);
 
 
-        cardView = view.findViewById(R.id.cardView);
+        scrollView = view.findViewById(R.id.cardView);
         memberPicture = view.findViewById(R.id.memberPicture);
         memberName = view.findViewById(R.id.memberName);
         memberRole = view.findViewById(R.id.memberRole);
@@ -45,9 +46,9 @@ public class Member1Fragment extends Fragment {
         linkedInIcon = view.findViewById(R.id.linkedInIcon);
 
         // Set click listeners for social media icons
-        setFacebookLink("https://www.facebook.com/your_facebook_profile", requireContext());
-        setInstagramLink("https://www.instagram.com/your_instagram_profile", requireContext());
-        setLinkedInLink("https://www.linkedin.com/in/your_linkedin_profile", requireContext());
+        setFacebookLink("https://www.facebook.com/profile.php?id=100008543230776&mibextid=ZbWKwL", requireContext());
+        setInstagramLink("https://l.facebook.com/l.php?u=https%3A%2F%2Finstagram.com%2Fhar_llie%3Futm_source%3Dqr%26igshid%3DMzNlNGNkZWQ4Mg%253D%253D%26fbclid%3DIwAR3qqOqt4W4S58IdC7Mh_2FY6jikikSLK_7Fzg8VZ2eUdwvI4vLTucxUEJ0&h=AT2QeAuMws3i_iEqbMQh7q03anV2TeYQ2QZ-CUzWp6y_mZH_X91qR79mNG87m1u2IxXh3UClPk_nBccLCC5Dl6fVGlXYlxZjOZHZJcCSgzOBv_sQyuyXXtXvxKbh39B5sl4_5A", requireContext());
+        setLinkedInLink("https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fjohn-harley-aparece-bb0a03282%3Ffbclid%3DIwAR1Y7edbOf91vtrVr9MQkJLl2GHLM6BN10_Q2EXSYd1sTc1JK5Ps8F02le8&h=AT2QeAuMws3i_iEqbMQh7q03anV2TeYQ2QZ-CUzWp6y_mZH_X91qR79mNG87m1u2IxXh3UClPk_nBccLCC5Dl6fVGlXYlxZjOZHZJcCSgzOBv_sQyuyXXtXvxKbh39B5sl4_5A", requireContext());
 
         // You can set the member's details like name, role, and picture here
 

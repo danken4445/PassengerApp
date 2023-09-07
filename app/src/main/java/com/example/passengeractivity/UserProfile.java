@@ -184,17 +184,26 @@ public class UserProfile extends AppCompatActivity implements NavigationView.OnN
             // Issue the low balance notification
             NotificationManagerCompat lowBalanceNotificationManager = NotificationManagerCompat.from(this);
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
-                // TODO: Consider calling
-                //    ActivityCompat#requestPermissions
-                // here to request the missing permissions, and then overriding
-                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                //                                          int[] grantResults)
-                // to handle the case where the user grants the permission. See the documentation
-                // for ActivityCompat#requestPermissions for more details.
-                return;
+                // Handle permission request or inform the user about the missing permission
             }
             lowBalanceNotificationManager.notify(lowBalanceNotificationId, lowBalanceBuilder.build());
+        } else if (userBalance > 0) { // Balance added
+            // Create a notification builder for top-up success
+            NotificationCompat.Builder topUpSuccessBuilder = new NotificationCompat.Builder(this, "payment_channel")
+                    .setSmallIcon(R.drawable.buslogo1)
+                    .setContentTitle("Top Up Successful")
+                    .setContentText("Your top-up was successful.")
+                    .setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
+            // Create a unique notification ID for the top-up success notification
+            int topUpSuccessNotificationId = 3; // Use a different ID than the low balance notification
+
+            // Issue the top-up success notification
+            NotificationManagerCompat topUpSuccessNotificationManager = NotificationManagerCompat.from(this);
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+                // Handle permission request or inform the user about the missing permission
+            }
+            topUpSuccessNotificationManager.notify(topUpSuccessNotificationId, topUpSuccessBuilder.build());
         }
 
 

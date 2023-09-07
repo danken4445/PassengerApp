@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="282dp"
+            android:layout_marginTop="238dp"
             android:columnCount="2"
             android:orientation="horizontal"
             android:padding="8dp"
@@ -73,13 +73,6 @@
                         android:textStyle="bold" />
 
                     <!-- TextView for member's brief information -->
-                    <TextView
-                        android:id="@+id/memberInfo1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Brief info about Member 1"
-                        android:textSize="14sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -132,13 +125,6 @@
                         android:textStyle="bold" />
 
                     <!-- TextView for member's brief information -->
-                    <TextView
-                        android:id="@+id/memberInfo2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Brief info about Member 1"
-                        android:textSize="14sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -185,19 +171,12 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="4dp"
-                        android:text="Back End\n Dev"
+                        android:text="Back End\n Developer"
                         android:textAlignment="center"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <!-- TextView for member's brief information -->
-                    <TextView
-                        android:id="@+id/memberInfo3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Brief info about Member 1"
-                        android:textSize="14sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -251,13 +230,6 @@
                         android:textStyle="bold" />
 
                     <!-- TextView for member's brief information -->
-                    <TextView
-                        android:id="@+id/memberInfo4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Brief info about Member 1"
-                        android:textSize="14sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -307,19 +279,12 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="4dp"
-                        android:text="Project Researcher\n Technical Writer"
+                        android:text="Project Researcher\n Technical Writer\nDocumentation"
                         android:textAlignment="center"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <!-- TextView for member's brief information -->
-                    <TextView
-                        android:id="@+id/memberInfo5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Brief info about Member 1"
-                        android:textSize="14sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -367,19 +332,12 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="4dp"
-                        android:text="Project Researcher\n Technical Writer"
+                        android:text="Project Researcher\n Technical Writer\nProject Presenter"
                         android:textAlignment="center"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <!-- TextView for member's brief information -->
-                    <TextView
-                        android:id="@+id/memberInfo6"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Brief info about Member 1"
-                        android:textSize="14sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -429,19 +387,12 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="4dp"
-                        android:text="Project Researcher\n Technical Writer"
+                        android:text="Project Researcher\n Technical Writer\nDocumentation"
                         android:textAlignment="center"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <!-- TextView for member's brief information -->
-                    <TextView
-                        android:id="@+id/memberInfo7"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Brief info about Member 1"
-                        android:textSize="14sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

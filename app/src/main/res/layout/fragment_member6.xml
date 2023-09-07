@@ -1,4 +1,4 @@
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cardView"
     android:layout_width="match_parent"
@@ -21,7 +21,7 @@
         <ImageView
             android:id="@+id/memberPicture"
             android:layout_width="wrap_content"
-            android:layout_height="275dp"
+            android:layout_height="300dp"
             android:background="@drawable/userprofile1"
             android:scaleType="centerCrop" />
 
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="8dp"
-            android:text="Dan"
+            android:text="Blondin Brhyle\nSon"
             android:textAlignment="center"
             android:textSize="48sp" />
 
@@ -108,4 +108,4 @@
 
         </LinearLayout>
     </LinearLayout>
-</androidx.cardview.widget.CardView>
+</ScrollView>

@@ -1,6 +1,7 @@
 package com.example.passengeractivity;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -9,10 +10,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.airbnb.lottie.LottieAnimationView;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class RPChatBotActivity extends AppCompatActivity {
+
 
     private RecyclerView recyclerView;
     private EditText userInput;
@@ -52,15 +56,25 @@ public class RPChatBotActivity extends AppCompatActivity {
             messageList.add(new Message(userMessage, true));
             chatAdapter.notifyDataSetChanged();
 
-            // Get a response from the chatbot
-            String botResponse = getChatbotResponse(userMessage);
+            // Show typing animation
 
-            // Add chatbot response to the chat
-            messageList.add(new Message(botResponse, false));
-            chatAdapter.notifyDataSetChanged();
+            // Simulate a delay (e.g., 2 seconds) for the typing animation
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    // Hide typing animation when the response is ready
 
-            // Clear the user input field
-            userInput.setText("");
+                    // Get a response from the chatbot
+                    String botResponse = getChatbotResponse(userMessage);
+
+                    // Add chatbot response to the chat
+                    messageList.add(new Message(botResponse, false));
+                    chatAdapter.notifyDataSetChanged();
+
+                    // Clear the user input field
+                    userInput.setText("");
+                }
+            }, 800); // Adjust the delay duration as needed
         }
     }
 
