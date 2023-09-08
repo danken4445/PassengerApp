@@ -142,15 +142,43 @@ public class AboutUsActivity extends AppCompatActivity {
         cardView6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Animate the CardView when clicked
                 animateCardView(cardView6);
-                replaceFragment(new Member6Fragment());
+                Animation zoomInAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.zoom_in);
+
+                // Apply the animation to the CardView
+                cardView6.startAnimation(zoomInAnimation);
+
+                // Replace the fragment with Member1Fragment
+                // Add a delay of 500 milliseconds (adjust as needed)
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        // Replace the fragment with Member1Fragment
+                        replaceFragment(new Member6Fragment());
+                    }
+                }, 500); // 500 milliseconds delay
             }
         });
         cardView7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Animate the CardView when clicked
                 animateCardView(cardView7);
-                replaceFragment(new Member7Fragment());
+                Animation zoomInAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.zoom_in);
+
+                // Apply the animation to the CardView
+                cardView7.startAnimation(zoomInAnimation);
+
+                // Replace the fragment with Member1Fragment
+                // Add a delay of 500 milliseconds (adjust as needed)
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        // Replace the fragment with Member1Fragment
+                        replaceFragment(new Member7Fragment());
+                    }
+                }, 500); // 500 milliseconds delay
             }
         });
 

@@ -22,7 +22,7 @@
             android:id="@+id/memberPicture"
             android:layout_width="wrap_content"
             android:layout_height="300dp"
-            android:background="@drawable/userprofile1"
+            android:background="@drawable/harley"
             android:scaleType="centerCrop" />
 
         <!-- TextView for member's name -->

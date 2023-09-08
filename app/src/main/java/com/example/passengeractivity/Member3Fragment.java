@@ -47,8 +47,8 @@ public class Member3Fragment extends Fragment {
 
         // Set click listeners for social media icons
         setFacebookLink("https://www.facebook.com/D2LGGWP/", requireContext());
-        setInstagramLink("https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2Frxrj10%2F%3Ffbclid%3DIwAR3-scDwMCgAMqBzzolKGT-kZ-_8XxarPqLp7IVE46ocqbBGOpzWnAApZtQ&h=AT1AJT6vHtWDx4KA7Y2wrjPBHKpfT2OtaPrgO8fH9S64f1CyrpQiL7_dYYmi7RHazWgVFd3PuYoMy9lGj7OJf-6PcYnnNu669w3dSJQAB_1FuYDidBy51CXrMdT-gzZ-4Vqzzg", requireContext());
-        setLinkedInLink("https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.linkedin.com%2Fin%2Frexer-john-anoos-76346328b%2F%3Ffbclid%3DIwAR3_QNIKKf_S_V4Ub5e8JcbNFFshMBd0rQRHKaPKtLiHWGsA1cYpoEMpZJk&h=AT1AJT6vHtWDx4KA7Y2wrjPBHKpfT2OtaPrgO8fH9S64f1CyrpQiL7_dYYmi7RHazWgVFd3PuYoMy9lGj7OJf-6PcYnnNu669w3dSJQAB_1FuYDidBy51CXrMdT-gzZ-4Vqzzg", requireContext());
+        setInstagramLink("www.instagram.com%2Frxrj10%2F%3Ffbclid%3DIwAR3-scDwMCgAMqBzzolKGT-kZ-_8XxarPqLp7IVE46ocqbBGOpzWnAApZtQ&h=AT1AJT6vHtWDx4KA7Y2wrjPBHKpfT2OtaPrgO8fH9S64f1CyrpQiL7_dYYmi7RHazWgVFd3PuYoMy9lGj7OJf-6PcYnnNu669w3dSJQAB_1FuYDidBy51CXrMdT-gzZ-4Vqzzg", requireContext());
+        setLinkedInLink("www.linkedin.com%2Fin%2Frexer-john-anoos-76346328b%2F%3Ffbclid%3DIwAR3_QNIKKf_S_V4Ub5e8JcbNFFshMBd0rQRHKaPKtLiHWGsA1cYpoEMpZJk&h=AT1AJT6vHtWDx4KA7Y2wrjPBHKpfT2OtaPrgO8fH9S64f1CyrpQiL7_dYYmi7RHazWgVFd3PuYoMy9lGj7OJf-6PcYnnNu669w3dSJQAB_1FuYDidBy51CXrMdT-gzZ-4Vqzzg", requireContext());
 
         // You can set the member's details like name, role, and picture here
 

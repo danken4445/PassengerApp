@@ -48,7 +48,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="156dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/userprofile" />
+                        android:src="@drawable/harley" />
 
                     <!-- TextView for member's name -->
                     <TextView
@@ -68,7 +68,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="4dp"
-                        android:text="Full Stack\nDeveloper"
+                        android:text="Full Stack Developer\nTest Engineer"
+                        android:textAlignment="center"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
@@ -99,7 +100,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="156dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/userprofile1" />
+                        android:src="@drawable/dan" />
 
                     <!-- TextView for member's name -->
                     <TextView
@@ -151,7 +152,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="156dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/userprofile1" />
+                        android:src="@drawable/rj" />
 
                     <!-- TextView for member's name -->
                     <TextView
@@ -204,7 +205,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="156dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/userprofile1" />
+                        android:src="@drawable/argie" />
 
                     <!-- TextView for member's name -->
                     <TextView
@@ -259,7 +260,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="156dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/userprofile1" />
+                        android:src="@drawable/aldrin" />
 
                     <!-- TextView for member's name -->
                     <TextView
@@ -312,7 +313,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="156dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/userprofile1" />
+                        android:src="@drawable/blandin" />
 
                     <!-- TextView for member's name -->
                     <TextView
@@ -367,7 +368,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="156dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/userprofile1" />
+                        android:src="@drawable/blezyl" />
 
                     <!-- TextView for member's name -->
                     <TextView
