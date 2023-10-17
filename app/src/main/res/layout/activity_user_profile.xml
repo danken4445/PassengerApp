@@ -5,7 +5,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/userbgnew2"
+    android:background="@drawable/userprof11"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
     tools:context=".UserProfile"
@@ -47,7 +47,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"
-            android:layout_marginTop="22dp"
+            android:layout_marginTop="32dp"
             android:text="Welcome!"
             android:textColor="#001a3f"
             android:textSize="36dp"
@@ -87,53 +87,62 @@
 
         <LinearLayout
             android:id="@+id/linearLayout"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="22dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:orientation="vertical"
-            android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/userProfile">
+            app:layout_constraintTop_toBottomOf="@+id/userProfile"
+            >
 
 
             <androidx.cardview.widget.CardView
-                android:layout_width="350dp"
-                android:layout_height="180dp"
+                app:cardBackgroundColor="@color/transparent"
+                android:layout_width="wrap_content"
+                android:layout_height="172dp"
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:elevation="18dp"
-                app:cardBackgroundColor="@color/colorPrimary"
-                app:cardCornerRadius="26dp"
-                app:cardUseCompatPadding="true">
+                app:cardCornerRadius="32dp"
+                app:cardUseCompatPadding="true"
+                android:background="@drawable/gradient_background"
+
+                >
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/card"
-                    android:scaleX="1.2"
+                    android:background="@drawable/card55"
+
 
 
                     >
 
                     <ImageView
                         android:id="@+id/rideCoinLogo"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
+                        android:layout_width="82dp"
+                        android:layout_height="82dp"
+                        android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
                         android:layout_marginLeft="44dp"
-                        android:layout_marginTop="2dp"
-                        android:layout_marginEnd="43dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="6dp"
                         app:srcCompat="@drawable/buslogo" />
 
                     <TextView
                         android:id="@+id/ridecoins"
-                        android:layout_width="wrap_content"
+                        android:layout_width="170dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="-280dp"
-                        android:layout_marginTop="20dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginLeft="-268dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginEnd="119dp"
                         android:layout_toRightOf="@id/rideCoinLogo"
                         android:text="RideCoin Balance"
                         android:textColor="#001a3f"
@@ -145,26 +154,32 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/rideCoinLogo"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="28dp"
                         android:layout_marginLeft="50dp"
-                        android:layout_marginTop="-12dp"
-                        android:text=""
-                        android:textColor="#d8a13c"
+                        android:layout_marginTop="-26dp"
+                        android:text="100"
+                        android:textColor="@color/colorDarkPrimary"
                         android:textSize="38sp"
                         app:fontFamily="@font/alata" />
 
                     <TextView
                         android:id="@+id/textViewID2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="256dp"
+                        android:layout_height="26dp"
+                        android:layout_below="@+id/rideCoinBalance"
+                        android:layout_alignParentStart="true"
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentBottom="true"
-                        android:layout_marginEnd="64dp"
-                        android:layout_marginBottom="16dp"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="89dp"
                         android:fontFamily="@font/nova_square"
-                        android:text=""
-                        android:textColor="@color/colorSecondary"
-                        android:textSize="16sp"
-                        android:textStyle="bold">
+                        android:text="(PASSENGER ID 1234)"
+                        android:textColor="@color/colorDarkPrimary"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        >
 
 
                     </TextView>
@@ -179,9 +194,8 @@
             android:id="@+id/linearLayout2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-26dp"
+            android:layout_marginTop="4dp"
             android:orientation="horizontal"
-            android:padding="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -194,18 +208,26 @@
                 android:layout_height="175dp"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
+                android:background="@drawable/leftbox2"
                 android:clickable="true"
-                android:elevation="32dp"
+                android:elevation="-32dp"
                 android:onClick="onCardViewClick"
+                android:outlineAmbientShadowColor="@color/colorLightSecondary"
                 android:transitionName="mapTransition"
+                app:cardBackgroundColor="@color/transparent"
                 app:cardCornerRadius="14dp"
-                app:cardUseCompatPadding="true">
+                app:cardElevation="-32dp"
+                app:cardUseCompatPadding="true"
+                >
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:background="@drawable/gradientbg">
+                    android:background="@drawable/glow_effect2"
+
+
+                    >
 
 
                     <com.airbnb.lottie.LottieAnimationView
@@ -228,7 +250,7 @@
                         android:layout_alignParentEnd="true"
                         android:layout_marginStart="0dp"
                         android:layout_marginTop="132dp"
-                        android:background="@drawable/glow_effect"
+                        android:background="@drawable/glow_effect3"
                         android:fontFamily="@font/baloo_bhai"
                         android:text="Top Up Locations"
                         android:textAlignment="center"
@@ -247,19 +269,20 @@
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:elevation="32dp"
-                android:outlineAmbientShadowColor="@color/colorDarkPrimary"
-                android:outlineSpotShadowColor="@color/colorDarkPrimary"
+                app:cardBackgroundColor="@color/transparent"
                 app:cardCornerRadius="14dp"
+                app:cardElevation="-32dp"
+                app:cardUseCompatPadding="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:cardUseCompatPadding="true"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+                >
 
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/gradientbg">
+                    android:background="@drawable/glow_effect2">
 
 
                     <com.airbnb.lottie.LottieAnimationView
@@ -278,7 +301,7 @@
                         android:layout_alignParentTop="true"
                         android:layout_marginStart="0dp"
                         android:layout_marginTop="132dp"
-                        android:background="@drawable/glow_effect"
+                        android:background="@drawable/glow_effect3"
                         android:fontFamily="@font/baloo_bhai"
                         android:text="View QR Code"
                         android:textAlignment="center"
@@ -302,7 +325,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
-            android:background="@drawable/glow_effect"
+            android:background="@drawable/glow_effect2"
             app:lottie_rawRes="@raw/chatbo2" />
 
         <androidx.core.widget.NestedScrollView

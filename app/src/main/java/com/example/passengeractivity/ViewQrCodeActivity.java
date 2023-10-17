@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ViewQrCodeActivity extends AppCompatActivity {
-    String Pid;
+    String qrid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,9 +25,9 @@ public class ViewQrCodeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_view_qr_code);
 
         // Get the passenger ID from the intent
-        Pid = getIntent().getStringExtra("Pid");
+        qrid = getIntent().getStringExtra("QRID");
         // Generate the QR code for the passenger ID
-        Bitmap qrCodeBitmap = generateQRCode(Pid);
+        Bitmap qrCodeBitmap = generateQRCode(qrid);
 
         // Load the QR code image into the ImageView
         ImageView qrCodeImageView = findViewById(R.id.qrCodeImageView);

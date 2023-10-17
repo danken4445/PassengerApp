@@ -4,7 +4,7 @@
     android:id="@+id/history"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradientbg"
+    android:background="@drawable/loginbg2"
     android:orientation="vertical"
     android:padding="16dp">
 

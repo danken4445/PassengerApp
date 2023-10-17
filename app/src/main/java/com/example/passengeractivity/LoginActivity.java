@@ -2,7 +2,9 @@ package com.example.passengeractivity;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
@@ -17,6 +19,7 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -49,12 +52,14 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText usernameEditText, passwordEditText;
     private Button signInButton;
+    private CheckBox rememberMeCheckbox; // Add CheckBox for "Remember Me"
+
 
     private String defaultUsername = "user";
     private String defaultPassword = "password";
-    private String Pid, UserUsername, UserPassword, userBalance, userFirstname, userLastname;
+    private String Pid, qrid, UserUsername, UserPassword, userBalance, userFirstname, userLastname;
 
-    private String URL_dbPassenger = "http://group5db-001-site1.etempurl.com/ridepay/passengerlogin.php";
+    private String URL_dbPassenger = "http://dbgrp52-001-site1.ctempurl.com/ridepay/passengerlogin.php";
 
 
     @Override
@@ -63,25 +68,16 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_main);
 
+        rememberMeCheckbox = findViewById(R.id.rememberMeCheckbox); // Initialize CheckBox
 
-        TextView acronymTextView = findViewById(R.id.Acronym);
         String text = "Rapid Integrated Digital E-PAYment";
 
         SpannableString spannableString = new SpannableString(text);
 
-        // Initialize the LottieAnimationView
-        LottieAnimationView lottieAnimationView = findViewById(R.id.lottieAnimationView);
 
-        // Load the Lottie animation from a file (you can also use other methods to load from URL, etc.)
-        lottieAnimationView.setAnimation(R.raw.blob2); // Replace "your_lottie_animation" with your animation file
 
-        // Optional: Set animation speed (1f is the default)
-        lottieAnimationView.setSpeed(1f); // Adjust the speed as needed
 
-        // Start playing the animation
-        lottieAnimationView.playAnimation();
 
-        // Define the color you want (#d8a13c)
         int customColor = Color.parseColor("#d8a13c");
 
         // Use regex to split the text by spaces and non-word characters
@@ -99,36 +95,27 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         // Set the formatted text in the TextView
-        acronymTextView.setText(spannableString);
 
 
         usernameEditText = findViewById(R.id.usernameEditText);
         passwordEditText = findViewById(R.id.passwordEditText);
         signInButton = findViewById(R.id.signInButton);
+        loadSavedCredentials();
+
 
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /**
-                 String username = usernameEditText.getText().toString();
-                 String password = passwordEditText.getText().toString();
 
-                 if (username.equals(defaultUsername) && password.equals(defaultPassword)) {
-                 // Successful login logic
-                 Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                 navigateToUserProfile();
-                 } else {
-                 // Failed login logic
-                 Toast.makeText(LoginActivity.this, "Invalid Username or Password", Toast.LENGTH_SHORT).show();
-
-                 // Apply move-right animation to EditTexts
-                 ObjectAnimator shakeAnimator = ObjectAnimator.ofFloat(view, "translationX", 0, -10, 10, -10, 10, -5, 5, -2, 2, 0);
-                 shakeAnimator.setDuration(500);
-                 shakeAnimator.start();
-
-                 }**/
                 final String enteredUsername = usernameEditText.getText().toString();
                 final String enteredPassword = passwordEditText.getText().toString();
+                // Save or clear credentials based on the "Remember Me" checkbox
+                if (rememberMeCheckbox.isChecked()) {
+                    saveCredentials(enteredUsername, enteredPassword);
+                } else {
+                    clearCredentials();
+                }
+
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_dbPassenger,
                         new Response.Listener<String>() {
@@ -143,6 +130,7 @@ public class LoginActivity extends AppCompatActivity {
                                     if (success.equals("1")) {
                                         String message = jsonObject.getString("Message");
                                         Pid = jsonObject.getString("Pid");
+                                        qrid = jsonObject.getString("Pqrid");
                                         UserUsername = jsonObject.getString("UserUsername");
                                         UserPassword = jsonObject.getString("UserPassword");
                                         userBalance = jsonObject.getString("Balance");
@@ -151,7 +139,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
                                         navigateToUserProfile();
-                                        Toast.makeText(LoginActivity.this, Pid, Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(LoginActivity.this,qrid, Toast.LENGTH_SHORT).show();
                                     } else {
                                         String message = jsonObject.getString("Message");
                                         Toast.makeText(LoginActivity.this, message, Toast.LENGTH_SHORT).show();
@@ -165,6 +153,7 @@ public class LoginActivity extends AppCompatActivity {
                                     Toast.makeText(LoginActivity.this, "Error: " + e.toString(), Toast.LENGTH_SHORT).show();
                                 }
                             }
+
                         },
                         new Response.ErrorListener() {
                             @Override
@@ -193,9 +182,36 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    private void saveCredentials(String username, String password) {
+        SharedPreferences sharedPreferences = getSharedPreferences("login_preferences", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("username", username);
+        editor.putString("password", password);
+        editor.apply();
+    }
+
+    private void clearCredentials() {
+        SharedPreferences sharedPreferences = getSharedPreferences("login_preferences", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear();
+        editor.apply();
+    }
+
+    private void loadSavedCredentials() {
+        SharedPreferences sharedPreferences = getSharedPreferences("login_preferences", Context.MODE_PRIVATE);
+        String savedUsername = sharedPreferences.getString("username", "");
+        String savedPassword = sharedPreferences.getString("password", "");
+
+        // Populate the fields with saved credentials
+        usernameEditText.setText(savedUsername);
+        passwordEditText.setText(savedPassword);
+        rememberMeCheckbox.setChecked(!savedUsername.isEmpty());
+    }
+
     private void navigateToUserProfile() {
         Intent intent = new Intent(LoginActivity.this, UserProfile.class);
         intent.putExtra("Pid", Pid);
+        intent.putExtra("QRID", qrid);
         intent.putExtra("UserUsername", UserUsername);
         intent.putExtra("UserPassword", UserPassword);
         intent.putExtra("userBalance", userBalance);

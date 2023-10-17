@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,7 +17,7 @@ import androidx.fragment.app.Fragment;
 
 public class Member6Fragment extends Fragment {
 
-    private CardView cardView;
+    private ScrollView scrollView;
     private ImageView memberPicture;
     private TextView memberName;
     private TextView memberRole;
@@ -35,7 +36,7 @@ public class Member6Fragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_member6, container, false);
 
 
-        cardView = view.findViewById(R.id.cardView);
+        scrollView = view.findViewById(R.id.cardView);
         memberPicture = view.findViewById(R.id.memberPicture);
         memberName = view.findViewById(R.id.memberName);
         memberRole = view.findViewById(R.id.memberRole);
@@ -59,7 +60,7 @@ public class Member6Fragment extends Fragment {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("fb://facewebmodal/f?href=" + instagramUrl));
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse( instagramUrl));
                     context.startActivity(intent);
                 } catch (Exception e) {
                     // If Facebook app is not installed, open in the browser
@@ -75,7 +76,7 @@ public class Member6Fragment extends Fragment {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("fb://facewebmodal/f?href=" + linkedInUrl));
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse( linkedInUrl));
                     context.startActivity(intent);
                 } catch (Exception e) {
                     // If Facebook app is not installed, open in the browser
@@ -94,7 +95,7 @@ public class Member6Fragment extends Fragment {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("fb://facewebmodal/f?href=" + facebookUrl));
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(facebookUrl));
                     context.startActivity(intent);
                 } catch (Exception e) {
                     // If Facebook app is not installed, open in the browser

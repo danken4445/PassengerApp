@@ -9,6 +9,7 @@
     <color name="colorDarkPrimary">#141e46</color>
     <color name="colorLightPrimary">#304599</color>
     <color name="colorLightSecondary">#ffda6a</color>
+    <color name="transparent">#rrggbb</color>
 
 
 </resources>

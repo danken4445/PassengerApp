@@ -85,7 +85,7 @@ public class UserProfile extends AppCompatActivity implements NavigationView.OnN
     LottieAnimationView rightCloudAnimationView;
     LinearLayout contentView2;
     ConstraintLayout contentView3;
-    String Pid, message, UserUsername, UserPassword, userFirstname, userLastname;
+    String Pid, qrid, UserUsername, UserPassword, userFirstname, userLastname;
     private int userBalance;
     private LottieAnimationView chatbotIcon;
     private String URL_dbgetInfo = "http://group5db-001-site1.etempurl.com/ridepay/userprofile.php";
@@ -108,20 +108,12 @@ public class UserProfile extends AppCompatActivity implements NavigationView.OnN
 
         // User Information
         Pid = getIntent().getStringExtra("Pid");
+        qrid = getIntent().getStringExtra(("QRID"));
         UserUsername = getIntent().getStringExtra("UserUsername");
         UserPassword = getIntent().getStringExtra("UserPassword");
         userBalance = Integer.parseInt(getIntent().getStringExtra("userBalance"));
         userFirstname = getIntent().getStringExtra("userFirstname");
         userLastname = getIntent().getStringExtra("userLastname");
-
-
-
-
-        rideCoinBalanceTextView.setText("₱" + userBalance + ".00");
-        textViewUserName.setText(userFirstname);
-        textViewID.setText(Pid);
-
-
         showMap = findViewById(R.id.showMap);
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
@@ -131,6 +123,11 @@ public class UserProfile extends AppCompatActivity implements NavigationView.OnN
         contentView3 = findViewById(R.id.constraintLayout);
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
+
+
+        rideCoinBalanceTextView.setText("₱" + userBalance + ".00");
+        textViewUserName.setText(userFirstname);
+        textViewID.setText(Pid);
 
 
         LottieAnimationView animationView = findViewById(R.id.locationlottie);
@@ -214,7 +211,7 @@ public class UserProfile extends AppCompatActivity implements NavigationView.OnN
                 Intent intent = new Intent(UserProfile.this, ViewQrCodeActivity.class);
                 // Pass any necessary data to ViewQrCodeActivity using intent extras
                 // For example, you can pass the user's ID (Pid) if needed:
-                intent.putExtra("Pid", Pid);
+                intent.putExtra("QRID", qrid);
                 startActivity(intent);
             }
         });

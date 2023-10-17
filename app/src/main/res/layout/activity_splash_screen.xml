@@ -4,45 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradientbg"
+    android:background="@color/white"
     tools:context=".SplashScreen">
 
 
-    <com.airbnb.lottie.LottieAnimationView
+    <ImageView
         android:id="@+id/bus_logo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="250dp"
-        app:lottie_autoPlay="true"
-        app:lottie_rawRes="@raw/bus" />
+        android:src="@drawable/logotransparent">
 
-
-    <TextView
-        android:id="@+id/companyName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="-50dp"
-        android:fontFamily="@font/faster_one"
-        android:text="RIDEPAY"
-        android:textColor="#d7a03b"
-        android:textSize="62dp"
-        android:transitionName="compName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/bus_logo" />
+    </ImageView>
 
 
     <TextView
         android:id="@+id/sloganText"
+        android:padding="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:fontFamily="@font/nova_square"
+        android:layout_marginTop="-64dp"
+        android:fontFamily="@font/carter_one"
         android:text="Transforming Transportation for a Smarter, Safer, and Greener Future."
-
-
         android:textAlignment="center"
         android:textColor="#d7a03b"
         android:textSize="22dp"

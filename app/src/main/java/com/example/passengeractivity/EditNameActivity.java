@@ -39,7 +39,7 @@ public class EditNameActivity extends AppCompatActivity {
     private ImageView userEditProfile;
     private ImageButton buttonEditProfile;
     private String Pid;
-    private String URL_dbGetHis = "http://group5db-001-site1.etempurl.com/ridepay/editpassinfo.php";
+    private String URL_dbGetHis = "http://dbgrp52-001-site1.ctempurl.com/ridepay/editpassinfo.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
